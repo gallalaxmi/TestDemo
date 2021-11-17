@@ -8,7 +8,7 @@ import commonMethods.HomeCommon;
 import io.cucumber.java.en.Then;
 import pages.HomePage;
 
-public class Home  {
+public class Home {
 	protected WebDriver driver = DriverUtil.getDriver("chrome");
 	HomePage homePage = new HomePage(driver);
 	HomeCommon homeCommon = new HomeCommon();
@@ -23,7 +23,7 @@ public class Home  {
 	@Then("^I add (\\d+) different products to my wish list$")
 	public void addProducts(int count) throws InterruptedException {
 		homePage.clickShop();
-		homeCommon.addProductsToWIshList(count);
+		homePage.addProductsToWIshList(count);
 	}
 	
 	

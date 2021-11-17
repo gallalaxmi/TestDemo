@@ -24,6 +24,9 @@ public class HomePage {
 	    @FindBy(how = How.XPATH, using = "//a[@title='Shop']")
 	    public WebElement shop;
 	    
+	    @FindBy(how = How.XPATH, using = "//*[a[text()='Add to cart']]//a[@data-title='Add to wishlist']")
+	    public WebElement addToWishlist;
+	    
 	    public void clickWishList()
 	    {
 	    	wishList.click();
@@ -44,17 +47,11 @@ public class HomePage {
 	    	acceptAll.click();
 	    }
 	    
-//	    @FindBy(how = How.XPATH, using = "//*[a[text()='Add to cart']]//span[text()='Add to wishlist']")
-//	    public WebElement addToWishlist;
-
-//	    public void Login(String userName, String password)
-//	    {
-//	        txtUserName.sendKeys(userName);
-//	        txtPassword.sendKeys(password);
-//	    }
-	    
-//	public String addToWishlist = "//*[a[text()='Add to cart']]//span[text()='Add to wishlist']";
-//	public String wishList = "//a[@title='Wishlist']";
-//	public String cart = "//a[@title='Cart']";
+	    public void addProductsToWIshList(int count) throws InterruptedException {
+			for(int i = 1; i <= count; i++) {
+				addToWishlist.click();
+				Thread.sleep(2000);
+			}
+	    }
 
 }

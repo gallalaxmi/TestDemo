@@ -22,7 +22,12 @@ public class MyWishListCommon {
 			int unitPrices = driver.findElements(By.xpath("//table[contains(@class,'wishlist_table')]/tbody/tr["+ row +"]/td[4]//bdi")).size();
 			if(unitPrices > 1) {
 				String text = driver.findElement(By.xpath("(//table[contains(@class,'wishlist_table')]/tbody/tr["+ row +"]/td[4]//bdi)[2]")).getText();
-				value = Integer.parseInt(text.trim().replace('£', '0'));
+				value = Integer.parseInt(text.trim().replace("£", "").replace(".00", ""));
+				System.out.println("galla"+ value);
+			} else if(unitPrices == 1) {
+				String text = driver.findElement(By.xpath("//table[contains(@class,'wishlist_table')]/tbody/tr["+ row +"]/td[4]//bdi")).getText();
+				value = Integer.parseInt(text.trim().replace("£", "").replace(".00", ""));
+				System.out.println("galla"+ value);
 			}
 				
 		}

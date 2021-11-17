@@ -18,6 +18,10 @@ public class MyWishListPage {
     @FindBy(how = How.XPATH, using = "//table[contains(@class,'wishlist_table')]")
     public WebElement wishlistTable;
     
+    public void verifyPageTitle() {
+    	pageTitle.isDisplayed();
+    }
+    
     public void verifyWishListTable() {
     	wishlistTable.isDisplayed();
     }

@@ -18,6 +18,7 @@ public class MyWishList {
 	@Then("^I view my wishlist table$")
 	public void viewMyWishList() {
 		homePage.clickWishList();
+		myWishListPage.verifyPageTitle();
 		myWishListPage.verifyWishListTable();
 	}
 	
@@ -28,7 +29,7 @@ public class MyWishList {
 	
 	@Then("^I search for lowest price product$")
 	public void searchLowPriceProduct() {
-
+		myWishListCommon.getLowestPriceProduct();
 	}
 	
 	@Then("^I am able to add the lowest price item to my cart$")
